@@ -1,4 +1,4 @@
-//2.Basic Stack Operations
+//02.Basic Stack Operations
 package A_StackAndQueue.Exercises;
 
 import java.util.*;

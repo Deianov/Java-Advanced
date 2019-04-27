@@ -1,4 +1,4 @@
-//1.Reverse Numbers with a Stack
+//01.Reverse Numbers with a Stack
 package A_StackAndQueue.Exercises;
 
 import java.util.ArrayDeque;
