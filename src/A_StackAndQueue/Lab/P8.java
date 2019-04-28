@@ -17,19 +17,23 @@ public class P8 {
             if (input.equals("back")) {
                 if (browser.size() > 1) {
                     forward.push(browser.poll());
+                } else {
+                    System.out.println("no previous URLs");
+                    continue;
                 }
             } else if (input.equals("forward")) {
-                if (forward.isEmpty()) {
+                if (!forward.isEmpty()) {
+                    browser.push(forward.poll());
+                } else {
                     System.out.println("no next URLs");
                     continue;
-                } else {
-                    browser.push(forward.poll());
                 }
             } else {
                 browser.push(input);
-                forward.clear();
+                if (!forward.isEmpty()) forward.clear();
             }
-            System.out.println(browser.peek());
+
+            System.out.println(browser.isEmpty() ? "" : browser.peek());
         }
     }
 }
