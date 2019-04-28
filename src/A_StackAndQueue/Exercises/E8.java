@@ -10,60 +10,43 @@ public class E8 {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());
 
-        Deque<String> deque = new ArrayDeque<>();
-        Deque<Deque<String>> temp = new ArrayDeque<>();
-        temp.push(new ArrayDeque<>());
+        StringBuffer text = new StringBuffer();
+        Deque<StringBuffer> stack = new ArrayDeque<>();
 
         while (n-- > 0) {
-            String input = scanner.nextLine();
-            char command = input.charAt(0);
-            String argument = input.substring(1).trim();
+            String[] data = scanner.nextLine().split("\\s+");
+            String command = data[0];
+            String argument = data.length > 1 ? data[1] : "";
 
             switch (command) {
                 // add string
-                case '1' :
-                    deque.add(argument);
+                case "1" :
+                    text.append(argument);
+                    stack.push(new StringBuffer(text));
                     break;
                 // erase last N characters
-                case '2' :
-                    eraseLastCharacters(deque, Integer.parseInt(argument));
+                case "2" :
+                    int count = Integer.parseInt(argument);
+                    int length = text.length();
+                    text.setLength(count > length ? 0 : length - count);
+                    stack.push(new StringBuffer(text));
                     break;
                 // print character at index
-                case '3' :
+                case "3" :
                     int index = Integer.valueOf(argument);
-                    String dequeAsString = deque.toString();
-                    if (index > -1 && index <= (dequeAsString.length() - 2)) {
-                        System.out.println(dequeAsString.charAt(index));
-                    }
+                    System.out.println(text.charAt(index - 1));
                     break;
                 // undo group
-                case '4' :
-                    if (!temp.isEmpty()) {
-                        deque = temp.pop();
-                        if (!temp.isEmpty()) {
-                            deque = temp.peek();
+                case "4" :
+                    if (stack.size() > 0) {
+                        stack.pop();
+                        if (stack.size() > 0) {
+                            text = stack.peek();
+                        } else {
+                            text.setLength(0);
                         }
                     }
                     break;
-            }
-
-            if (command == '1' || command == '2') {
-                Deque<String> history = new ArrayDeque<>(deque);
-                temp.push(history);
-            }
-        }
-    }
-
-    // Recursive erasing of last characters
-    private static void eraseLastCharacters(Deque<String> deque, int count) {
-        if (count > 0 && !deque.isEmpty()) {
-            String element = deque.pollLast();
-            int length = element.length();
-
-            if (count < length) {
-                deque.add(element.substring(0, length - count));
-            } else if (count > length) {
-                eraseLastCharacters(deque, count - length);
             }
         }
     }
