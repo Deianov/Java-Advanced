@@ -1,4 +1,4 @@
-//07.Recursive Fibonacci
+//07.Recursive Fibonacci from 0 (1, 1, 2, 3, 5, 8, 13, 21, 34… )
 package A_StackAndQueue.Exercises;
 
 import java.util.ArrayDeque;
@@ -17,7 +17,7 @@ public class E7 {
         numbers = new ArrayDeque<>();
         numbers.push(1l);
         numbers.push(1l);
-        if (n < 3) {
+        if (n < 2) {
             System.out.println(1);
             return;
         }
