@@ -2,25 +2,32 @@
 package A_StackAndQueue.Exercises;
 
 import java.util.ArrayDeque;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.Scanner;
 
 public class E5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         // robots
         String input = scanner.nextLine();
-        Deque<Robot> robots = new ArrayDeque<>();
-        // time
-        Time time = new Time(scanner.nextLine());
+        String[] robots = input.split(";");
+        int robotsCount = robots.length;
 
-        for (String robot : input.split(";")) {
-            String[] data = robot.split("-");
-            String name = data[0];
-            int speed = Integer.valueOf(data[1]);
-            robots.add(new Robot(name, speed, time));
+        int[] robotTimes = new int[robotsCount];
+        int[] robotSpeeds = new int[robotsCount];
+
+        for (int i = 0; i < robotsCount ; i++) {
+            String[] data = robots[i].split("-");
+            robots[i] = data[0];
+            robotSpeeds[i] = Integer.parseInt(data[1]);
         }
 
+        // current
+        Time time = new Time(scanner.nextLine());
+
+        // products
         Deque<String> products = new ArrayDeque<>();
 
         while (!"End".equals(input = scanner.nextLine())) {
@@ -30,74 +37,45 @@ public class E5 {
         while (!products.isEmpty()) {
             time.plus();
 
-            Robot robot = robots.stream().filter(Robot::isFree).findFirst().orElse(null);
+            boolean isAssignment = false;
 
-            if (robot != null) {
-                robot.setJob(time.current());
-                System.out.printf("%s - %s %s%n", robot.getName(), products.poll(), time.toString());
-            } else {
-                products.add(products.poll());
+            for (int i = 0; i < robotsCount ; i++) {
+
+                boolean isFree = --robotTimes[i] < 1;
+
+                if(isFree && !isAssignment) {
+                    robotTimes[i] = robotSpeeds[i];
+                    System.out.printf("%s - %s %s%n", robots[i], products.poll(), time.toString());
+                    isAssignment = true;
+                }
+            }
+
+            if (!isAssignment) {
+                products.offer(products.poll());
             }
         }
     }
 }
 
 class Time {
-    private int time;
+    private int current;
 
     Time(String timeString) {
-        String[] data = timeString.split(":");
-        int time = 0;
-        time += Integer.valueOf(data[0]) * 3600;
-        time += Integer.valueOf(data[1]) * 60;
-        time += Integer.valueOf(data[2]);
-        this.time = time;
+        int[] data = Arrays.stream(timeString.split(":")).mapToInt(Integer::parseInt).toArray();
+        this.current = (data[0] * 3600) + (data[1] * 60) + data[2];
     }
 
     void plus() {
-        this.time += 1;
-    }
-
-    int current() {
-        return this.time;
+        this.current++;
     }
 
     @Override
     public String toString () {
-        int currentTime = this.time;
-        currentTime = currentTime % 86400;
-        int hours = currentTime / 3600;
-        currentTime -= hours * 3600;
-        int minutes = currentTime / 60;
-        currentTime -= minutes * 60;
-        int seconds = currentTime;
-
+        int currentTime = this.current;
+        int hours = (currentTime / 3600) % 24;
+        int remainder = currentTime % 3600;
+        int minutes = remainder / 60;
+        int seconds = remainder % 60;
         return String.format("[%02d:%02d:%02d]",hours , minutes, seconds);
-    }
-}
-
-class Robot {
-    private String name;
-    private int speed;
-    private int startTime;
-    private Time time;
-
-    Robot(String name, int speed, Time time) {
-        this.name = name;
-        this.speed = speed;
-        this.startTime = 0;
-        this.time = time;
-    }
-
-    void setJob(int startTime) {
-        this.startTime = startTime;
-    }
-
-    String getName() {
-        return name;
-    }
-
-    boolean isFree () {
-        return (this.startTime + this.speed) <= this.time.current();
     }
 }
