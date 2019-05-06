@@ -1,8 +1,8 @@
 //05. Matrix shuffling
 package B_MultidimensionalArrays.Exercises;
 
-        import java.util.Arrays;
-        import java.util.Scanner;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class E05 {
     public static void main(String[] args) {
