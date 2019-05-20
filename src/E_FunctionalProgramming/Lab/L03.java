@@ -1,25 +1,25 @@
 //03. Count Uppercase Words
 package E_FunctionalProgramming.Lab;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 class L03 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(new Scanner(System.in).nextLine());
+        Scanner scanner = new Scanner(System.in);
+        String[] words = scanner.nextLine().split(" ");
 
-        Predicate<String> isUppercase = s -> s.charAt(0) == s.toUpperCase().charAt(0);
-        List<String> words = new ArrayList<>();
+        Predicate<String> isCapitalWord = s -> s.charAt(0) == s.toUpperCase().charAt(0);
 
-        while (scanner.hasNext()) {
+        List<String> capitalWords = Arrays.stream(words)
+                .filter(isCapitalWord)
+                .collect(Collectors.toList());
 
-            String text = scanner.next();
-            if (isUppercase.test(text)) words.add(text);
-        }
+        System.out.println(capitalWords.size());
+        capitalWords.forEach(System.out::println);
 
-        System.out.println(words.size());
-        words.forEach(System.out::println);
     }
 }

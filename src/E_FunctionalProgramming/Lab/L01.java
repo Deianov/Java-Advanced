@@ -14,7 +14,7 @@ class L01 {
 
         // interface that accepts a parameter of type T and returns variable of type R.
         Function<String, Integer> parse = s -> Integer.parseInt(s);
-        List<Integer> numbers = Arrays.stream(scanner.nextLine().split(", ")).map(parse::apply).collect(Collectors.toList());
+        List<Integer> numbers = Arrays.stream(scanner.nextLine().split(", ")).map(parse).collect(Collectors.toList());
 
         // lambda
         numbers.removeIf(number -> number % 2 != 0);
