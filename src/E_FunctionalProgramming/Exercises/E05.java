@@ -6,7 +6,7 @@ import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
-public class E05 {
+class E05 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
