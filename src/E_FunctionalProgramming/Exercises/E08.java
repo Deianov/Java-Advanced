@@ -1,7 +1,7 @@
 //08. Custom Comparator
 package E_FunctionalProgramming.Exercises;
 
-        import java.util.*;
+import java.util.*;
 
 class E08 {
     public static void main(String[] args) {
