@@ -1,11 +1,11 @@
 //06. Product Shop
 package C_SetsAndMaps.Lab;
 
-        import java.util.LinkedHashMap;
-        import java.util.Scanner;
-        import java.util.TreeMap;
+import java.util.LinkedHashMap;
+import java.util.Scanner;
+import java.util.TreeMap;
 
-public class L06 {
+class L06 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;

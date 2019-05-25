@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class L05 {
+class L05 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

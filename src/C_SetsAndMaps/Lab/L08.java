@@ -4,7 +4,7 @@ package C_SetsAndMaps.Lab;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class L08 {
+class L08 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());

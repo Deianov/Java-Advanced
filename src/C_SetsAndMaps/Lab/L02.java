@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class L02 {
+class L02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
