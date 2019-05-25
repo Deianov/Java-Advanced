@@ -1,11 +1,11 @@
-//6.Hot Potato
+//06.Hot Potato
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P6 {
+class P6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

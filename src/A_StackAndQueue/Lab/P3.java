@@ -1,11 +1,11 @@
-//3.Decimal to Binary Converter
+//03.Decimal to Binary Converter
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P3 {
+class P3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int decimal = Integer.parseInt(scanner.nextLine());

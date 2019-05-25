@@ -1,11 +1,11 @@
-//4.Matching Brackets
+//04.Matching Brackets
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P4 {
+class P4 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String expression = scanner.nextLine();

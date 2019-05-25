@@ -1,11 +1,11 @@
-//5.Printer Queue
+//05.Printer Queue
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P5 {
+class P5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;

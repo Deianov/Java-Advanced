@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P8 {
+class P8 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;

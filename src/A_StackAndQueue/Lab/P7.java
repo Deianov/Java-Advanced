@@ -1,11 +1,11 @@
-//7.Math Potato
+//07.Math Potato
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P7 {
+class P7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

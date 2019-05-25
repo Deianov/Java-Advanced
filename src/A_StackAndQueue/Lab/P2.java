@@ -1,4 +1,4 @@
-//2.Simple Calculator
+//02.Simple Calculator
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class P2 {
+class P2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] tokens = scanner.nextLine().split("\\s+");

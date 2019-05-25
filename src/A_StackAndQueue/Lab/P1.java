@@ -1,10 +1,10 @@
-//1.Browser History
+//01.Browser History
 package A_StackAndQueue.Lab;
 
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
-public class P1 {
+class P1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String line;
