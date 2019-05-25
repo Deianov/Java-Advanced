@@ -8,7 +8,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class E09 {
+class E09 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;

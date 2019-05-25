@@ -4,7 +4,7 @@ package C_SetsAndMaps.Exercises;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class E03 {
+class E03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

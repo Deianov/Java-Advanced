@@ -3,7 +3,7 @@ package C_SetsAndMaps.Exercises;
 
 import java.util.*;
 
-public class E12 {
+class E12 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

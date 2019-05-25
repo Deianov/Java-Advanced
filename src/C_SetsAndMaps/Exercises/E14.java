@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Scanner;
 import java.util.TreeMap;
 
-public class E14 {
+class E14 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

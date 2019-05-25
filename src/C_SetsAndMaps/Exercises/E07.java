@@ -6,7 +6,7 @@ import java.util.Deque;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
 
-public class E07 {
+class E07 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;

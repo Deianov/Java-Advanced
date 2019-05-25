@@ -4,7 +4,7 @@ package C_SetsAndMaps.Exercises;
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class E05 {
+class E05 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;

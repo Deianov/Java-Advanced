@@ -4,7 +4,7 @@ package C_SetsAndMaps.Exercises;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
-public class E02 {
+class E02 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
