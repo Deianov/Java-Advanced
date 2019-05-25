@@ -1,9 +1,9 @@
-// 10. Poisonous Plants
+//10. Poisonous Plants
 package A_StackAndQueue.Exercises;
 
 import java.util.*;
 
-public class E10 {
+class E10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();

@@ -3,7 +3,7 @@ package A_StackAndQueue.Exercises;
 
 import java.util.*;
 
-public class E3 {
+class E03 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = Integer.parseInt(scanner.nextLine());

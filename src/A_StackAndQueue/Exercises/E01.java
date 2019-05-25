@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class E1 {
+class E01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

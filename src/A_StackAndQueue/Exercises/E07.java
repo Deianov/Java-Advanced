@@ -5,7 +5,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
 
-public class E7 {
+class E07 {
 
     private static Deque<Long> numbers;
 

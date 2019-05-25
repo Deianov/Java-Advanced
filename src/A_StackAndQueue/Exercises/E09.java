@@ -3,9 +3,9 @@
 // Postfix notations (also called Reverse Polish Notation) - https://en.wikipedia.org/wiki/Reverse_Polish_notation
 package A_StackAndQueue.Exercises;
 
-        import java.util.*;
+import java.util.*;
 
-public class E9 {
+class E09 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
