@@ -1,5 +1,5 @@
-//01.Car Info
-package F_DefiningClasses.Lab.Car;
+//02. Car Info - Constructors
+package F_DefiningClasses.Lab.B_Car;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,9 @@ class Main {
     public static void main(String[] args) throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(reader.readLine());
+        int linesCount = Integer.parseInt(reader.readLine());
 
-        while (n-- > 0) {
+        while (linesCount-- > 0) {
             String[] data = reader.readLine().split("\\s+");
             Car car = null;
 
@@ -44,13 +44,6 @@ class Car {
         this.model = model;
         this.horsePower = horsePower;
     }
-
-    public String getMake() { return make; }
-    void setMake(String make) { this.make = make; }
-    String getModel() { return model; }
-    void setModel(String model) { this.model = model; }
-    int getHorsePower() { return horsePower; }
-    void setHorsePower(int horsePower) { this.horsePower = horsePower; }
 
     String getInfo() {
         return
