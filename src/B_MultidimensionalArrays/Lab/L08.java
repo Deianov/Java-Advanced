@@ -4,7 +4,7 @@ package B_MultidimensionalArrays.Lab;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class L08 {
+class L08 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

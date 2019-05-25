@@ -3,7 +3,7 @@ package B_MultidimensionalArrays.Lab;
 
 import java.util.Scanner;
 
-public class L03 {
+class L03 {
 
     private static Scanner scanner;
 
