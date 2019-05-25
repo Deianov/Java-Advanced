@@ -4,7 +4,7 @@ package B_MultidimensionalArrays.Exercises;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class E04 {
+class E04 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

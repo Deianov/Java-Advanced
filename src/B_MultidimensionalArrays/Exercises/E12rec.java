@@ -3,7 +3,7 @@ package B_MultidimensionalArrays.Exercises;
 
 import java.util.*;
 
-public class E12rec {
+class E12rec {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int rows = scanner.nextInt();
