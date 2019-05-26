@@ -12,45 +12,38 @@ class Main {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String line;
 
-        HashMap<String, BankAccount> bankAccounts = new HashMap<>();
-        BankAccount bankAccount;
+        HashMap<Integer, BankAccount> bankAccounts = new HashMap<>();
+        BankAccount bankAccount = null;
 
         while (!"End".equals(line = reader.readLine())) {
 
-            String[] commandToken = line.split("\\s+");
-            String id;
-            double amount;
+            String[] commandTokens = line.split("\\s+");
 
-            switch (commandToken[0]) {
-                case "Create" :
+            if (commandTokens.length == 3) {
+                bankAccount = bankAccounts.get(Integer.parseInt(commandTokens[1]));
+
+                if (bankAccount == null) {
+                    System.out.println("Account does not exist");
+                    continue;
+                }
+            }
+
+            switch (commandTokens[0]) {
+                case "Create":
                     bankAccount = new BankAccount();
-                    bankAccounts.put(bankAccount.toString(), bankAccount);
-                    System.out.println(String.format("Account %s created", bankAccount.toString()));
+                    bankAccounts.put(bankAccount.getId(), bankAccount);
+                    System.out.println(String.format("Account ID%d created", bankAccount.getId()));
                     break;
                 case "Deposit":
-                    id = commandToken[1];
-                    amount = Double.parseDouble(commandToken[2]);
-
-                    if (bankAccounts.containsKey("ID" + id)) {
-                        bankAccount = bankAccounts.get("ID" + id);
-                        bankAccount.deposit(amount);
-                        System.out.println(String.format("Deposited %.2f to %s", amount, bankAccount.toString()));
-                    } else {
-                        System.out.println("Account does not exist");
-                    }
+                    double amount = Double.parseDouble(commandTokens[2]);
+                    bankAccount.deposit(amount);
+                    System.out.println(String.format("Deposited %.0f to ID%d", amount, bankAccount.getId()));
                     break;
                 case "SetInterest":
-                    BankAccount.setInterestRate(Double.parseDouble(commandToken[1]));
+                    BankAccount.setInterestRate(Double.parseDouble(commandTokens[1]));
                     break;
                 case "GetInterest":
-                    id = commandToken[1];
-
-                    if (bankAccounts.containsKey("ID" + id)) {
-                       int years = Integer.parseInt(commandToken[2]);
-                        System.out.println(String.format("%.2f", bankAccounts.get("ID" + id).getInterest(years)));
-                    } else {
-                        System.out.println("Account does not exist");
-                    }
+                    System.out.println(String.format("%.2f", bankAccount.getInterest(Integer.parseInt(commandTokens[2]))));
                     break;
             }
         }
@@ -60,15 +53,19 @@ class Main {
 class BankAccount {
     private final static double DEFAULT_INTEREST = 0.02;
 
-    private static int bankAccountsCount = 1;
+    private static int bankAccountsCount = 0;
     private static double interestRate = DEFAULT_INTEREST;
 
     private int id;
     private double balance;
 
     BankAccount() {
-       this.id = bankAccountsCount++;
+       this.id = ++bankAccountsCount;
        this.balance = 0.0;
+    }
+
+    int getId() {
+        return id;
     }
 
     static void setInterestRate(double interestRate) {
@@ -85,6 +82,6 @@ class BankAccount {
 
     @Override
     public String toString() {
-        return "ID" + this.id;
+        return String.format("ID%d", this.id);
     }
 }
