@@ -29,14 +29,17 @@ class Main {
 }
 
 class Car {
+    private static final String undefinedValue = "unknown";
+    private static final int undefinedValueInteger = -1;
+
     private String make;
     private String model;
     private int horsePower;
 
     Car(String make) {
         this.make = make;
-        this.model = "unknown";
-        this.horsePower = -1;
+        this.model = undefinedValue;
+        this.horsePower = undefinedValueInteger;
     }
 
     Car(String make, String model, int horsePower) {

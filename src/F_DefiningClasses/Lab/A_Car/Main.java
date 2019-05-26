@@ -1,27 +1,28 @@
 //01.Car Info
 package F_DefiningClasses.Lab.A_Car;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int linesCount = Integer.parseInt(reader.readLine());
+        Scanner scanner = new Scanner(System.in);
 
-        while (linesCount-- > 0) {
-            String[] data = reader.readLine().split("\\s+");
+        int linesCount = Integer.parseInt(scanner.nextLine());
 
-            Car car = new Car();
-
-            car.setMake(data[0]);
-            car.setModel(data[1]);
-            car.setHorsePower(Integer.parseInt(data[2]));
-
-            System.out.println(car.getInfo());
-        }
+        IntStream
+                .rangeClosed(1, linesCount)
+                .boxed() // IntStream -> Stream
+                .map(n -> scanner.nextLine().split(" "))
+                .map(data -> {
+                    Car car = new Car();
+                    car.setMake(data[0]);
+                    car.setModel(data[1]);
+                    car.setHorsePower(Integer.parseInt(data[2]));
+                    return car;
+                })
+                .forEach(car -> System.out.println(car.getInfo()));
     }
 }
 
