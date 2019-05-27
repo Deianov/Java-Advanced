@@ -21,13 +21,13 @@ public class Main {
             double characteristic = Double.parseDouble(data[2]);
 
             switch (breed) {
-                case StreetExtraordinaire.NAME:
+                case StreetExtraordinaire.BREED:
                     cats.put(name, new StreetExtraordinaire(name, characteristic))
                     ;break;
-                case Cymric.NAME:
+                case Cymric.BREED:
                     cats.put(name, new Cymric(name, characteristic))
                     ;break;
-                case Siamese.NAME:
+                case Siamese.BREED:
                     cats.put(name, new Siamese(name, characteristic))
                     ;break;
             }
@@ -53,7 +53,7 @@ abstract class Cat {
 }
 
 class Siamese extends Cat {
-    static final String NAME = "Siamese";
+    static final String BREED = "Siamese";
     private double earSize;
 
     Siamese(String name, double earSize) {
@@ -63,12 +63,12 @@ class Siamese extends Cat {
 
     @Override
     public String toString() {
-        return String.format("%s %s %.2f", Siamese.NAME, super.getName(), this.earSize);
+        return String.format("%s %s %.2f", Siamese.BREED, super.getName(), this.earSize);
     }
 }
 
 class Cymric extends Cat {
-    static final String NAME = "Cymric";
+    static final String BREED = "Cymric";
     private double furLength;
 
     Cymric(String name, double furLength) {
@@ -78,12 +78,12 @@ class Cymric extends Cat {
 
     @Override
     public String toString() {
-        return String.format("%s %s %.2f", Cymric.NAME, super.getName(), this.furLength);
+        return String.format("%s %s %.2f", Cymric.BREED, super.getName(), this.furLength);
     }
 }
 
 class StreetExtraordinaire extends Cat {
-    static final String NAME = "StreetExtraordinaire";
+    static final String BREED = "StreetExtraordinaire";
     private double decibelsOfMeows;
 
     StreetExtraordinaire(String name, double decibelsOfMeows) {
