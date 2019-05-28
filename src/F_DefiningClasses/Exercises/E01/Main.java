@@ -1,5 +1,5 @@
 //01. Opinion Poll
-package F_DefiningClasses.Exercises.Е01;
+package F_DefiningClasses.Exercises.E01;
 
 import java.util.Comparator;
 import java.util.Scanner;

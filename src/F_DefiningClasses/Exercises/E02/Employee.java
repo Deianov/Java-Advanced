@@ -1,4 +1,4 @@
-package F_DefiningClasses.Exercises.Е02;
+package F_DefiningClasses.Exercises.E02;
 
 class Employee {
     private static final String UNDEFINED_VALUE_STRING = "n/a";

@@ -1,5 +1,5 @@
 //02. Company Roster
-package F_DefiningClasses.Exercises.Е02;
+package F_DefiningClasses.Exercises.E02;
 
 import java.io.BufferedReader;
 import java.io.IOException;
