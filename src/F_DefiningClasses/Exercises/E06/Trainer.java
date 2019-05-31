@@ -18,9 +18,9 @@ class Trainer {
         this.pokemons = new HashMap<>();
     }
 
-    public String getName() { return name; }
-    public int getBadges() { return badges; }
-    public HashMap<String, Pokemon> getPokemons() { return pokemons; }
+    String getName() { return name; }
+    int getBadges() { return badges; }
+    HashMap<String, Pokemon> getPokemons() { return pokemons; }
 
     void addPokemon(String name, String element, int health) {
         this.pokemons.put(name, new Pokemon(name, element, health));
