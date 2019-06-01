@@ -1,4 +1,4 @@
-package G_SimpleDataStructure.LinkedList;
+package G_SimpleDataStructure;
 
 import java.awt.dnd.InvalidDnDOperationException;
 import java.util.function.Consumer;
