@@ -22,7 +22,7 @@ class LinkedList {
     void addFirst(int element){
 
         Node newHead = new Node(element);
-        if(this.size == 0){
+        if(this.isEmpty()){
             this.head = this.tail = newHead;
         }else {
             newHead.next = this.head;
@@ -36,7 +36,7 @@ class LinkedList {
     void addLast(int element){
 
         Node newTail = new Node(element);
-        if(this.size == 0){
+        if(this.isEmpty()){
             this.head = this.tail = newTail;
         } else {
             newTail.previous = this.tail;
@@ -48,7 +48,7 @@ class LinkedList {
     }
 
     int removeFirst(){
-        if (this.size == 0) {
+        if (this.isEmpty()) {
             throw new InvalidDnDOperationException("Remove called for collection with size 0");
         }
         int firstElement = this.head.element;
@@ -63,7 +63,7 @@ class LinkedList {
     }
 
     int removeLast() {
-        if (this.size == 0) {
+        if (this.isEmpty()) {
 
             throw new InvalidDnDOperationException("Remove called for collection with size 0");
         }
@@ -101,7 +101,7 @@ class LinkedList {
     }
 
     void addAfter(int searchElement, int newElement){
-        if(this.size == 0){
+        if(this.isEmpty()){
             throw new InvalidDnDOperationException("AddAfter method on empty list");
         }
         Node tempNode = this.head;
@@ -114,44 +114,67 @@ class LinkedList {
         if(tempNode == null){
             throw new InvalidDnDOperationException("Element not found");
         }
-        Node newNode = new Node(newElement);
+        Node node = new Node(newElement);
 
-        newNode.next = tempNode.next;
-        newNode.previous = tempNode;
+        node.next = tempNode.next;
+        node.previous = tempNode;
 
-        tempNode.next = newNode;
-        newNode.next.previous = newNode;
+        tempNode.next = node;
+        if (node.next != null) {
+            node.next.previous = node;
+        } else {
+            this.tail = node;
+        }
+        this.size++;
     }
 
     Node removeAfter(int searchElement, int removeElement){
-        if (this.size == 0) {
+        if (this.isEmpty()) {
             throw new InvalidDnDOperationException("Remove called for collection with size 0");
         }
-        Node tempNode = this.head;
-        Node removeNode = null;
-        while (tempNode != null){
-            if(tempNode.element == searchElement){
-                removeNode = tempNode.next;
+        Node node = this.head;
+        Node remove = null;
+        while (node != null){
+            if(node.element == searchElement){
+                remove = node.next;
                 break;
             }
-            tempNode = tempNode.next;
+            node = node.next;
         }
-        if(tempNode == null){
+        if(node == null){
             throw new InvalidDnDOperationException("Search element not found");
         }
-        if(removeNode == null || removeNode.element != removeElement){
+        if(remove == null || remove.element != removeElement){
             throw new InvalidDnDOperationException("Element for remove not found");
         }
 
-        tempNode.next = removeNode.next;
+        node.next = remove.next;
 
-        if (tempNode.next != null) {
-            tempNode.next.previous = tempNode;
+        if (node.next != null) {
+            node.next.previous = node;
+        } else {
+            this.tail = node;
         }
         // remove element
-        removeNode = null;
+        remove = null;
 
         this.size--;
-        return tempNode.next;
+        return node.next;
+    }
+
+    private boolean isEmpty() {
+        return this.size == 0;
+    }
+
+    int getHead() {
+        return head.element;
+    }
+
+    int getTail() {
+        return tail.element;
+    }
+
+    int getSize() {
+        return size;
     }
 }
