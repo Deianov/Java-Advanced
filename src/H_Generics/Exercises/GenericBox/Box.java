@@ -1,17 +1,17 @@
 package H_Generics.Exercises.GenericBox;
 
-public class Box<T> {
+class Box<T> {
     private T element;
 
-    public Box(T element) {
+    Box(T element) {
         this.element = element;
     }
 
-    public T getElement() {
+    T getElement() {
         return element;
     }
 
-    public void setElement(T element) {
+    void setElement(T element) {
         this.element = element;
     }
 
