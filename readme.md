@@ -10,6 +10,6 @@ Course Topics<br/>
 *	[Functional Programming](https://github.com/Deianov/Java-Advanced/tree/master/src/E_FunctionalProgramming)<br/>
 *	[Defining Classes](https://github.com/Deianov/Java-Advanced/tree/master/src/F_DefiningClasses)<br/>
 *	[Workshop – Create Simple Data Structure](https://github.com/Deianov/Java-Advanced/tree/master/src/G_SimpleDataStructure)<br/>
-*	Generics<br/>
+*	[Generics](https://github.com/Deianov/Java-Advanced/tree/master/src/H_Generics)<br/>
 *	Iterators and Comparators<br/>
 *	Workshop
