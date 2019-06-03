@@ -1,9 +1,11 @@
-//07. Custom List; 08. Custom List Sorter
+// 07. Custom List
+// 08. Custom List Sorter
+// 09. Custom List Iterator
 package H_Generics.Exercises.CustomList;
 
 import java.util.Scanner;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String line;
@@ -37,10 +39,15 @@ class Main {
                     System.out.println(customList.getMin());
                     break;
                 case "Sort":
+                    // 08. Custom List Sorter
                     customList.sort();
                     break;
                 case "Print":
-                    customList.printAll();
+                    // 09. Custom List Iterator
+                    // Since customList is an instance of Iterable, then we can use it on a foreach loop.
+                    for (String item : customList) {
+                        System.out.println(item);
+                    }
                     break;
             }
         }
