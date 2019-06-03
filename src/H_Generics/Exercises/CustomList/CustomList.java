@@ -51,6 +51,10 @@ class CustomList<T extends Comparable<T>> {
         }
     }
 
+    void sort() {
+        Collections.sort(this.list);
+    }
+
     private boolean isEmpty() {
         return this.list.size() == 0;
     }

@@ -1,4 +1,4 @@
-//07. Custom List
+//07. Custom List; 08. Custom List Sorter
 package H_Generics.Exercises.CustomList;
 
 import java.util.Scanner;
@@ -36,8 +36,12 @@ class Main {
                 case "Min":
                     System.out.println(customList.getMin());
                     break;
+                case "Sort":
+                    customList.sort();
+                    break;
                 case "Print":
                     customList.printAll();
+                    break;
             }
         }
     }
