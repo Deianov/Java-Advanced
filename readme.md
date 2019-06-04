@@ -11,5 +11,5 @@ Course Topics<br/>
 *	[Defining Classes](https://github.com/Deianov/Java-Advanced/tree/master/src/F_DefiningClasses)<br/>
 *	[Workshop – Create Simple Data Structure](https://github.com/Deianov/Java-Advanced/tree/master/src/G_SimpleDataStructure)<br/>
 *	[Generics](https://github.com/Deianov/Java-Advanced/tree/master/src/H_Generics)<br/>
-*	Iterators and Comparators<br/>
+*	[Iterators and Comparators](https://github.com/Deianov/Java-Advanced/tree/master/src/I_IteratorsAndComparators)<br/>
 *	Workshop
