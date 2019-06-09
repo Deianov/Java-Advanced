@@ -12,4 +12,5 @@ Course Topics<br/>
 *	[Workshop – Create Simple Data Structure](https://github.com/Deianov/Java-Advanced/tree/master/src/G_SimpleDataStructure)<br/>
 *	[Generics](https://github.com/Deianov/Java-Advanced/tree/master/src/H_Generics)<br/>
 *	[Iterators and Comparators](https://github.com/Deianov/Java-Advanced/tree/master/src/I_IteratorsAndComparators)<br/>
-*	Workshop
+*	[Workshop - Basic Algorithms](https://github.com/Deianov/Java-Advanced/tree/master/src/J_BasicAlgorithms)<br/>
+*	Exams
