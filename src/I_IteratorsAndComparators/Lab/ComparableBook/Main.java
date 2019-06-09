@@ -1,6 +1,6 @@
 package I_IteratorsAndComparators.Lab.ComparableBook;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         Book bookOne = new Book("Animal Farm", 2003, "George Orwell");
         Book bookThree = new Book("The Documents in the Case", 2002);

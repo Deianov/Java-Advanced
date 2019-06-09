@@ -2,7 +2,7 @@ package I_IteratorsAndComparators.Lab.BookComparator;
 
 import java.util.Comparator;
 
-public class BookComparator implements Comparator<Book> {
+class BookComparator implements Comparator<Book> {
     @Override
     public int compare(Book a, Book b) {
 
