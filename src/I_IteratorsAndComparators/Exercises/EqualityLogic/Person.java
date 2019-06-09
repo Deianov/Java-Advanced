@@ -1,22 +1,22 @@
 package I_IteratorsAndComparators.Exercises.EqualityLogic;
 
-public class Person implements Comparable<Person> {
+class Person implements Comparable<Person> {
     private String name;
     private Integer age;
 
-    public Person(String name, int age) {
+    Person(String name, int age) {
         this.name = name;
         this.age = age;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
-    public int getAge() {
+    private int getAge() {
         return age;
     }
 
-    public void print() {
+    void print() {
         System.out.println(String.format("%s %d", this.name, this.age));
     }
 

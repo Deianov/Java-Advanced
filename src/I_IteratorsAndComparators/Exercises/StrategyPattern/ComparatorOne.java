@@ -2,7 +2,7 @@ package I_IteratorsAndComparators.Exercises.StrategyPattern;
 
 import java.util.Comparator;
 
-public class ComparatorOne implements Comparator<Person> {
+class ComparatorOne implements Comparator<Person> {
     @Override
     public int compare(Person o1, Person o2) {
 

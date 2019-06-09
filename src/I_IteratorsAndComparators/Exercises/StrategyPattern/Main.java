@@ -4,7 +4,7 @@ package I_IteratorsAndComparators.Exercises.StrategyPattern;
 import java.util.Scanner;
 import java.util.TreeSet;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

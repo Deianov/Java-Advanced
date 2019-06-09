@@ -2,7 +2,7 @@ package I_IteratorsAndComparators.Exercises.StackIterator;
 
 import java.util.Iterator;
 
-public class Stack<T> implements Iterable<T> {
+class Stack<T> implements Iterable<T> {
 
     private Node top;
 
@@ -23,11 +23,11 @@ public class Stack<T> implements Iterable<T> {
         }
     }
 
-    public void push(T element) {
+    void push(T element) {
         new Node(element);
     }
 
-    public T pop() {
+    T pop() {
         if (this.top == null) {
             throw new IndexOutOfBoundsException("No elements");
         }

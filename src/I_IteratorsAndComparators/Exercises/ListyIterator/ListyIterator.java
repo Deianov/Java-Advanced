@@ -2,18 +2,18 @@ package I_IteratorsAndComparators.Exercises.ListyIterator;
 
 import java.util.List;
 
-public class ListyIterator {
+class ListyIterator {
     private static final int INIT_START_INDEX = 0;
 
     private List<String> list;
     private int index;
 
-    public ListyIterator(List<String> list) {
+    ListyIterator(List<String> list) {
         this.list = list;
         this.index = INIT_START_INDEX;
     }
 
-    public boolean Move() {
+    boolean Move() {
         if (this.index < this.list.size() - 1) {
             this.index++;
             return true;
@@ -21,7 +21,7 @@ public class ListyIterator {
         return false;
     }
 
-    public void Print() {
+    void Print() {
         if (this.index < this.list.size()) {
             System.out.println(this.list.get(this.index));
         } else {
@@ -29,7 +29,7 @@ public class ListyIterator {
         }
     }
 
-    public boolean hasNext() {
+    boolean hasNext() {
         return this.index + 1 < this.list.size();
     }
 }

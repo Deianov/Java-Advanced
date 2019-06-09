@@ -3,30 +3,30 @@ package I_IteratorsAndComparators.Exercises.PetClinics;
 import java.util.Iterator;
 import java.util.stream.Stream;
 
-public class Rooms implements Iterable<Rooms.Room> {
+class Rooms implements Iterable<Rooms.Room> {
     private Room[] rooms;
 
-    public Rooms(int roomsCount) {
+    Rooms(int roomsCount) {
         this.rooms = Stream.generate(Room::new).limit(roomsCount).toArray(Room[]::new);
     }
 
-    public int count() {
+    int count() {
         return this.rooms.length;
     }
-    public String getRoom(int number) {
+    String getRoom(int number) {
         return rooms[number].toString();
     }
 
 
-    public class Room{
+    class Room{
         private Pet guest;
 
-        public Room() {
+        Room() {
             this.guest = null;
         }
 
-        public void place(Pet guest) { this.guest = guest; }
-        public boolean isEmpty(){
+        void place(Pet guest) { this.guest = guest; }
+        boolean isEmpty(){
             return this.guest == null;
         }
 
@@ -36,7 +36,7 @@ public class Rooms implements Iterable<Rooms.Room> {
         }
     }
 
-    public boolean hasEmptyRooms() {
+    boolean hasEmptyRooms() {
         for (Room room : this.rooms) {
             if (room.isEmpty()) {
                 return true;
@@ -45,7 +45,7 @@ public class Rooms implements Iterable<Rooms.Room> {
         return false;
     }
 
-    public boolean release() {
+    boolean release() {
         int length = this.rooms.length;
         int index = length / 2;
 

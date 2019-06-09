@@ -3,13 +3,13 @@ package I_IteratorsAndComparators.Exercises.PetClinics;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Clinic {
-    public static Map<String, Clinic> collection = new HashMap<>();
+class Clinic {
+    static Map<String, Clinic> collection = new HashMap<>();
 
     private String name;
     private Rooms rooms;
 
-    public Clinic(String name, int roomsCount) {
+    Clinic(String name, int roomsCount) {
         if (roomsCount % 2 == 0) {
             throw new IllegalArgumentException("Invalid Operation!");
         }
@@ -19,11 +19,11 @@ public class Clinic {
         Clinic.collection.put(name, this);
     }
 
-    public Rooms getRooms() {
+    Rooms getRooms() {
         return this.rooms;
     }
 
-    public boolean addGuest(String petName) {
+    boolean addGuest(String petName) {
 
         Pet pet = Pet.collection.get(petName);
 
@@ -36,7 +36,7 @@ public class Clinic {
         return false;
     }
 
-    public void print(Integer roomNumber) {
+    void print(Integer roomNumber) {
 
         if (roomNumber == null) {
             for (int i = 0; i < this.rooms.count(); i++) {

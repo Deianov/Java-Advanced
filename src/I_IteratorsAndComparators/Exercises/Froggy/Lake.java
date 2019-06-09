@@ -2,11 +2,11 @@ package I_IteratorsAndComparators.Exercises.Froggy;
 
 import java.util.Iterator;
 
-public class Lake implements Iterable<Integer> {
+class Lake implements Iterable<Integer> {
 
     private int[] stones;
 
-    public Lake (int[] stones) {
+    Lake (int[] stones) {
         this.stones = stones;
     }
 

@@ -2,7 +2,7 @@ package I_IteratorsAndComparators.Exercises.LinkedListTraversal;
 
 import java.util.Iterator;
 
-public class LinkedList implements Iterable<Integer> {
+class LinkedList implements Iterable<Integer> {
 
     private Node first;
     private Node end;
@@ -29,11 +29,11 @@ public class LinkedList implements Iterable<Integer> {
         }
     }
 
-    public void add(int value) {
+    void add(int value) {
         new Node(value);
     }
 
-    public boolean remove(int value) {
+    boolean remove(int value) {
         Node node = this.first;
 
         while (node != null) {
@@ -64,7 +64,7 @@ public class LinkedList implements Iterable<Integer> {
         return false;
     }
 
-    public int getSize() {
+    int getSize() {
         return this.size;
     }
 
