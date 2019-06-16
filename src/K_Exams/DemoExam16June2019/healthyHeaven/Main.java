@@ -5,7 +5,7 @@ public class Main {
         // Initialize the repository
         Restaurant restaurant = new Restaurant("Casa Domingo");
 
-// Initialize the entities
+        // Initialize the entities
         Vegetable tomato = new Vegetable("Tomato", 20);
         Vegetable cucumber = new Vegetable("Cucumber", 15);
 
@@ -18,15 +18,16 @@ public class Main {
         System.out.println(salad.getProductCount());  // 2
 
         System.out.println(salad.toString());
-// * Salad Tomatoes with cucumbers is 35 calories and have 2 products:
-//  - Tomato have 20 calories
-//  - Cucumber have 15 calories
+        // * Salad Tomatoes with cucumbers is 35 calories and have 2 products:
+        //  - Tomato have 20 calories
+        //  - Cucumber have 15 calories
 
         restaurant.add(salad);
 
-        System.out.println(restaurant.buy("Invalid salad")); // false
+        System.out.println(restaurant.buy("Invalid salad"));
+        // false
 
-// Initialize the second entities
+        // Initialize the second entities
         Vegetable corn = new Vegetable("Corn", 90);
         Salad casaDomingo = new Salad("Casa Domingo");
 
@@ -36,8 +37,18 @@ public class Main {
 
         restaurant.add(casaDomingo);
 
-        System.out.println(restaurant.getHealthiestSalad()); // Tomatoes with cucumbers
+        System.out.println(restaurant.getHealthiestSalad());
+        // Tomatoes with cucumbers
 
         System.out.println(restaurant.generateMenu());
+        // Casa Domingo have 2 salads:
+        // * Salad Tomatoes with cucumbers is 35 calories and have 2 products:
+        //  - Tomato have 20 calories
+        //  - Cucumber have 15 calories
+        // * Salad Casa Domingo is 125 calories and have 3 products:
+        //  - Tomato have 20 calories
+        //  - Cucumber have 15 calories
+        //  - Corn have 90 calories
+
     }
 }

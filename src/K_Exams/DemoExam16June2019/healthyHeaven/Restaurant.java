@@ -31,8 +31,10 @@ public class Restaurant {
         return false;
     }
 
-    public Salad getHealthiestSalad() {
-       return salads.stream().min(Comparator.comparingInt(Salad::getTotalCalories)).orElse(null);
+    public String getHealthiestSalad() {
+        Salad salad = salads.stream().min(Comparator.comparingInt(Salad::getTotalCalories)).orElse(null);
+
+        return salad == null ? "" : salad.toString();
     }
 
     public String generateMenu() {
