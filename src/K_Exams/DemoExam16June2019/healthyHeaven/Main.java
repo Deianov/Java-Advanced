@@ -49,6 +49,5 @@ public class Main {
         //  - Tomato have 20 calories
         //  - Cucumber have 15 calories
         //  - Corn have 90 calories
-
     }
 }
