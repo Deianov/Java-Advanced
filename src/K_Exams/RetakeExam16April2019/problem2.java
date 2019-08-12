@@ -5,15 +5,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class problem2 {
+    private static char[][] matrix;
+    private static int energy;
+
     private static char playerCharacter = 'P';
+    private static int playerRow = -1;
+    private static int playerCol = -1;
+
     private static char enemyCharacter = 'S';
     private static char helenCharacter = 'H';
     private static char emptyCharacter = '-';
-    private static char[][] matrix;
-    private static int energy;
-    private static int helens = 0;
-    private static int playerRow = -1;
-    private static int playerCol = -1;
+    private static char deadCharacter = 'X';
 
 
     public static void main(String[] args) {
@@ -28,20 +30,52 @@ public class problem2 {
             matrix[row] = scanner.nextLine().trim().toCharArray();
 
             for (int col = 0; col < matrix[row].length; col++) {
-                if (matrix[row][col] == helenCharacter) {
-                    helens++;
-                } else if (matrix[row][col] == playerCharacter){
+
+                if (matrix[row][col] == playerCharacter) {
                     playerRow = row;
                     playerCol = col;
                 }
             }
         }
 
+        boolean foundHelen = false;
+
+        while (energy > 0) {
+            String[] data = scanner.nextLine().split("\\s+");
+            String direction = data[0];
+            int enemyRow = Integer.parseInt(data[1]);
+            int enemyCol = Integer.parseInt(data[2]);
+
+            if (isValid(enemyRow, enemyCol)) {
+                matrix[enemyRow][enemyCol] = enemyCharacter;
+            }
+
+            char nextCharacter = playerMove(direction);
+
+            if (nextCharacter == helenCharacter) {
+                matrix[playerRow][playerCol] = emptyCharacter;
+                foundHelen = true;
+                break;
+            } else if (nextCharacter == enemyCharacter) {
+                energy -= 2;
+            }
+
+            matrix[playerRow][playerCol] = energy <= 0 ? deadCharacter : playerCharacter;
+        }
+
+        if (foundHelen) {
+            System.out.println(String.format(
+                    "Paris has successfully abducted Helen! Energy left: %d", energy));
+        } else {
+            System.out.println(String.format("Paris died at %d;%d.", playerRow, playerCol));
+        }
+        printMatrix();
     }
 
-    private static void playerMove(String direction){
+    private static char playerMove(String direction){
         int row = playerRow;
         int col = playerCol;
+        energy--;
 
         switch (direction){
             case "up" : row--; break;
@@ -52,8 +86,12 @@ public class problem2 {
         }
 
         if (isValid(row, col)){
-
+            matrix[playerRow][playerCol] = emptyCharacter;
+            playerRow = row;
+            playerCol = col;
         }
+
+        return matrix[playerRow][playerCol];
     }
 
 
